@@ -3,195 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Anniversary Deepika Ji - DJ BEATS</title>
+    <title>Anniversary Special | DJ BEATS</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;700;900&display=swap');
 
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #1a011a;
-            color: #fff;
-            overflow-x: hidden;
+            margin: 0; background: #0f0c29;
+            background: linear-gradient(to bottom, #1a1a2e, #16213e, #0f0c29);
+            color: #fff; font-family: 'Montserrat', sans-serif;
+            text-align: center; overflow-x: hidden;
         }
 
-        /* Moving Headline */
-        .marquee-container {
-            background: linear-gradient(90deg, #ff0055, #7000ff);
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+        /* Top Moving Header */
+        .top-bar {
+            background: linear-gradient(90deg, #ffd700, #ffcc00, #b8860b);
+            color: #000; padding: 12px 0;
+            font-weight: bold; position: fixed; width: 100%; top: 0; z-index: 1000;
+            box-shadow: 0 4px 20px rgba(255,215,0,0.4);
         }
 
-        marquee {
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Logo Section */
+        .logo-div { margin-top: 100px; padding: 20px; }
+        .logo-div i { font-size: 3.5rem; color: #ffd700; text-shadow: 0 0 20px #ffd700; }
+        .dj-text { font-size: 2.8rem; font-weight: 900; letter-spacing: 5px; display: block; color: #ffd700; margin-top: 10px; }
+
+        /* Featured Dashboard Photo */
+        .main-dashboard {
+            max-width: 900px; margin: 40px auto; padding: 15px;
+            perspective: 1000px;
+        }
+        .featured-img {
+            width: 100%; border-radius: 30px; 
+            border: 5px solid #ffd700;
+            box-shadow: 0 0 50px rgba(255,215,0,0.3);
+            animation: float 4s ease-in-out infinite;
         }
 
-        /* Logo & Header */
-        header {
-            text-align: center;
-            padding: 40px 20px;
-            background: rgba(0,0,0,0.4);
-        }
-
-        .logo {
-            font-size: 3rem;
-            color: #ffd700;
-            margin-bottom: 10px;
-            animation: pulse 2s infinite;
-        }
-        
-        .logo i { margin-right: 10px; }
-
-        /* Anniversary Section */
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-        }
-
+        /* Hero Text */
         .hero h1 {
             font-family: 'Great Vibes', cursive;
-            font-size: 5rem;
-            color: #ffd700;
-            margin: 0;
-            text-shadow: 2px 2px 10px rgba(255, 215, 0, 0.5);
+            font-size: clamp(3.5rem, 12vw, 6.5rem);
+            background: linear-gradient(to bottom, #ffffff, #ffd700);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin: 10px 0;
         }
 
-        /* Photo Gallery Grid */
+        /* Instagram Secret Links (Magic Buttons) */
+        .magic-links {
+            display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 40px 0;
+        }
+        .magic-btn {
+            background: linear-gradient(45deg, #ffd700, #b8860b);
+            color: #000; padding: 12px 25px; border-radius: 50px;
+            text-decoration: none; font-weight: bold; font-size: 0.9rem;
+            transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .magic-btn:hover { transform: scale(1.1); background: #fff; box-shadow: 0 0 20px #ffd700; }
+
+        /* Photo Gallery */
         .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 40px;
-            max-width: 1200px;
-            margin: 0 auto;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; padding: 20px; max-width: 1200px; margin: 0 auto;
         }
-
         .photo-card {
-            background: #2a2a2a;
-            border: 2px solid #ffd700;
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+            border-radius: 20px; overflow: hidden; border: 2px solid rgba(255,215,0,0.2);
+            transition: 0.4s; height: 350px;
+        }
+        .photo-card:hover { transform: scale(1.03); border-color: #ffd700; }
+        .photo-card img { width: 100%; height: 100%; object-fit: cover; }
+
+        /* Developer Footer */
+        .footer {
+            background: rgba(0,0,0,0.9); padding: 50px 20px;
+            border-top: 2px solid #ffd700; margin-top: 60px;
+        }
+        .ashish-brand { font-size: 0.8rem; letter-spacing: 3px; color: #888; margin-top: 25px; }
+        .ashish-brand b { color: #ffd700; text-shadow: 0 0 5px #ffd700; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
         }
 
-        .photo-card:hover {
-            transform: scale(1.05);
-        }
-
-        .photo-placeholder {
-            width: 100%;
-            height: 350px;
-            background: #333;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #555;
-            font-weight: bold;
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 50px;
-            background: #000;
-            border-top: 2px solid #ffd700;
-        }
-
-        .btn-wish {
-            background: #ffd700;
-            color: #000;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
-        .btn-wish:hover {
-            background: #fff;
-            box-shadow: 0 0 20px #ffd700;
-        }
-
-        /* Animations */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-
-        /* Floating Hearts Animation */
-        .hearts {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            pointer-events: none;
-            z-index: -1;
+        /* Music Controls */
+        #music-btn {
+            position: fixed; bottom: 30px; left: 30px;
+            background: #ffd700; color: #000; border: none;
+            width: 55px; height: 55px; border-radius: 50%;
+            cursor: pointer; z-index: 2000; font-size: 1.2rem;
         }
     </style>
 </head>
 <body>
 
-    <div class="marquee-container">
-        <marquee>🎉 DJ BEATS KI TRAF SE HAPPY ANNIVERSARY DEEPIKA JI 🎉 WISHING YOU A LIFETIME OF HAPPINESS AND LOVE! 🎉</marquee>
+    <div class="top-bar">
+        <marquee scrollamount="8">DJ BEATS KI TRAF SE HAPPY ANNIVERSARY DEEPIKA JI ✨ WISHING YOU A LIFETIME OF HAPPINESS ✨ MAY GOD BLESS YOU BOTH ✨</marquee>
     </div>
 
-    <header>
-        <div class="logo">
-            <i class="fas fa-headphones-alt"></i>DJ BEATS
-        </div>
-        <p style="color: #ffd700; letter-spacing: 5px;">PRESENTS</p>
-    </header>
+    <div class="logo-div">
+        <i class="fas fa-headphones-alt"></i>
+        <span class="dj-text">DJ BEATS</span>
+        <p style="letter-spacing: 10px; font-size: 0.7rem; color: #ffd700;">EXCLUSIVE PRESENTATION</p>
+    </div>
+
+    <div class="main-dashboard">
+        <img src="1000240711.jpg" class="featured-img" alt="Main Couple Photo">
+    </div>
 
     <section class="hero">
         <h1>Happy Anniversary</h1>
-        <h2 style="font-size: 2.5rem;">Deepika Ji & Mahi Ji</h2>
-        <p>A beautiful journey of love and togetherness.</p>
+        <h2 style="font-weight: 300; color: #ffd700;">Deepika Ji & Mahi Ji</h2>
     </section>
 
+    <h3 style="margin-top: 50px; color: #ffd700; font-family: 'Great Vibes'; font-size: 2.5rem;">Special Memories</h3>
+    <div class="magic-links">
+        <a href="https://www.instagram.com/stories/swan.2228075/3893152762825222781" target="_blank" class="magic-btn"><i class="fas fa-heart"></i> Moment 1</a>
+        <a href="https://www.instagram.com/stories/swan.2228075/3893152861273804537" target="_blank" class="magic-btn"><i class="fas fa-star"></i> Moment 2</a>
+        <a href="https://www.instagram.com/stories/swan.2228075/3893152950344062774" target="_blank" class="magic-btn"><i class="fas fa-music"></i> Moment 3</a>
+        <a href="https://www.instagram.com/stories/swan.2228075/3893153023241129653" target="_blank" class="magic-btn"><i class="fas fa-gift"></i> Moment 4</a>
+        <a href="https://www.instagram.com/stories/swan.2228075/3893153097555713570" target="_blank" class="magic-btn"><i class="fas fa-smile"></i> Moment 5</a>
+        <a href="https://www.instagram.com/stories/swan.2228075/3893153193781615087" target="_blank" class="magic-btn"><i class="fas fa-camera"></i> Moment 6</a>
+    </div>
+
     <div class="gallery">
-        <div class="photo-card">
-            <div class="photo-placeholder" style="background-image: url('1000240711.jpg')">Photo 1</div>
-        </div>
-        <div class="photo-card">
-            <div class="photo-placeholder" style="background-image: url('1000240730.jpg')">Photo 2</div>
-        </div>
-        <div class="photo-card">
-            <div class="photo-placeholder" style="background-image: url('1000240732.jpg')">Photo 3</div>
-        </div>
-        <div class="photo-card">
-            <div class="photo-placeholder" style="background-image: url('1000240728.jpg')">Photo 4</div>
-        </div>
-        <div class="photo-card">
-            <div class="photo-placeholder" style="background-image: url('1000240726.jpg')">Photo 5</div>
-        </div>
-        <div class="photo-card">
-            <div class="photo-placeholder" style="background-image: url('1000240720.jpg')">Photo 6</div>
+        <div class="photo-card"><img src="1000240730.jpg"></div>
+        <div class="photo-card"><img src="1000240732.jpg"></div>
+        <div class="photo-card"><img src="1000240728.jpg"></div>
+        <div class="photo-card"><img src="1000240726.jpg"></div>
+        <div class="photo-card"><img src="1000240724.jpg"></div>
+        <div class="photo-card"><img src="1000240720.jpg"></div>
+    </div>
+
+    <div class="footer">
+        <h3 style="font-family: 'Great Vibes'; font-size: 3rem; color: #ffd700;">Lots of Love</h3>
+        <p style="letter-spacing: 2px;">FROM: DJ BEATS FAMILY</p>
+        
+        <div class="ashish-brand">
+            DEVELOPED BY <b>ASHISH</b>
         </div>
     </div>
 
-    <footer>
-        <h2 style="font-family: 'Great Vibes', cursive; font-size: 3rem; color: #ffd700;">Lots of Love</h2>
-        <p>From: DJ BEATS FAMILY</p>
-        <button class="btn-wish" onclick="celebrate()">Click to Celebrate!</button>
-    </footer>
+    <audio id="bg-music" loop>
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="music-btn" onclick="toggleMusic()">
+        <i class="fas fa-play"></i>
+    </button>
 
     <script>
-        function celebrate() {
-            alert("Wishing you both a very Happy Marriage Anniversary! Keep shining together! ✨");
+        function toggleMusic() {
+            var music = document.getElementById("bg-music");
+            var btn = document.getElementById("music-btn");
+            if (music.paused) {
+                music.play();
+                btn.innerHTML = '<i class="fas fa-pause"></i>';
+                btn.style.boxShadow = "0 0 20px #ffd700";
+            } else {
+                music.pause();
+                btn.innerHTML = '<i class="fas fa-play"></i>';
+                btn.style.boxShadow = "none";
+            }
         }
     </script>
-
 </body>
 </html>
